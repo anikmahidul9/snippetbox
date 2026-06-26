@@ -9,9 +9,12 @@ import (
 )
 
 type templateData struct {
-	CurrentYear int
-	Snippet     models.Snippet
-	Snippets    []*models.Snippet
+	CurrentYear     int
+	Snippet         models.Snippet
+	Snippets        []*models.Snippet
+	Form            any
+	Flash           string
+	IsAuthenticated bool
 }
 
 func newTemplateCache() (map[string]*template.Template, error) {
@@ -43,7 +46,7 @@ func newTemplateCache() (map[string]*template.Template, error) {
 	return cache, nil
 }
 
-//Create a humanDate() function which returns a nicely formatted string representation of a time.Time object. We will use this in our HTML templates to display the created and expires times for each snippet in a more user-friendly format.
+// Create a humanDate() function which returns a nicely formatted string representation of a time.Time object. We will use this in our HTML templates to display the created and expires times for each snippet in a more user-friendly format.
 func humanDate(t time.Time) string {
 	return t.Format("02 Jan 2006 at 15:04")
 }
@@ -51,4 +54,3 @@ func humanDate(t time.Time) string {
 var functions = template.FuncMap{
 	"humanDate": humanDate,
 }
-

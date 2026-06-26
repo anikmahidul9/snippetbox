@@ -23,10 +23,14 @@
     </header>
     {{template "nav" .}}
     <main>
+      {{ with.Flash }}
+      <div class="flash">{{.}}</div>
+      {{ end }}
       {{template "main" .}}
     </main>
     <footer>
-      Powered by Mahidul Anik with <a href="https://golang.org/">Go</a> in {{.CurrentYear}}
+      Powered by Mahidul Anik with <a href="https://golang.org/">Go</a> in
+      {{.CurrentYear}}
     </footer>
     <script src="/static/js/main.js" type="text/javascript"></script>
   </body>

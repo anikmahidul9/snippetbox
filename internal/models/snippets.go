@@ -6,7 +6,6 @@ import (
 	"time"
 )
 
-var ErrNoRecord = errors.New("repository: no matching record found")
 
 type Snippet struct {
 	ID      int
