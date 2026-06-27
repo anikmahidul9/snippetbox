@@ -166,7 +166,7 @@ Install dependencies:
 go mod tidy
 ```
 
-Configure your PostgreSQL database connection.
+Configure your SQL database connection.
 
 Run the application:
 
@@ -189,7 +189,7 @@ https://localhost:4000
 * HTML templating
 * Middleware patterns
 * Dependency injection using an application struct
-* PostgreSQL integration
+* SQL integration
 * User authentication
 * Session management
 * CSRF protection
